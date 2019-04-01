@@ -1,0 +1,36 @@
+#container{
+    border: 5px solid black;
+    font-family: Tahoma;
+    background-color: rgb(182, 174, 174);
+}
+#searchBar{
+    display: grid;
+    grid-template-columns: 7fr 1fr
+
+}
+input{
+    font-size: 40px;
+    margin: 20px;
+}
+button{
+    margin: 20px;
+    font-size: 30px;
+}
+.player-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.playerCard{
+    font-size: 30px;
+    background-color: rgba(190, 137, 67, 0.808);
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    margin: 10px;
+}
+img{
+    background-color: white;
+    border: 2px solid black;
+}
