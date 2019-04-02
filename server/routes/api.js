@@ -9,6 +9,25 @@ const teamToIDs = {
     "suns": "1610612756"
 }
 let teamArr = []
+let dreamTeam = []
+
+router.get(`/dreamTeam/`, function(request, response){
+    response.send(dreamTeam)
+})
+
+router.post(`/roster/`, function(request, response){
+    let player = request.body
+    dreamTeam.push(player)
+})
+
+router.put(`/team/`, function(request, response){
+    let teams = request.body
+    let keys = Object.keys(teams)
+    for(let team of keys){
+        teamToIDs[team] = teams[team]
+    }
+    response.send(teamToIDs)
+})
 
 router.get(`/teams/:teamName`, function (request, response) {
     teamArr = []

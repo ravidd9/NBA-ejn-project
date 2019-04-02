@@ -15,3 +15,10 @@ $("button").on("click", function () {
         render(teamArr)
     })
 })
+
+$("#container").on("click", ".playerCard", function () {
+    // let fullName = $(this)
+    // let player = {
+    //     fName: $(this).
+    // }
+})
