@@ -8,7 +8,7 @@ const render = function(teamArr){
 }
 
 
-$("button").on("click", function () {
+$("#roster").on("click", function () {
     let teamName = $("input").val()
     $.get(`/teams/${teamName}`, function (teamArr) {
         console.log(teamArr)
@@ -16,9 +16,23 @@ $("button").on("click", function () {
     })
 })
 
+$("#dreamTeam").on("click", function () {
+    $.get(`/dreamTeam/`, function(dreamTeam){
+        console.log(dreamTeam)
+        render(dreamTeam)
+    })
+})
+
 $("#container").on("click", ".playerCard", function () {
-    // let fullName = $(this)
-    // let player = {
-    //     fName: $(this).
-    // }
+    let fullName = $(this).find(".fullName").text()
+    let player = {
+        fName: fullName.split(" ")[0],
+        lName: fullName.split(" ")[1],
+        jersey: $(this).find(".jersey").text(),
+        pos: $(this).find(".position").text()
+    }
+    console.log(player)
+    $.post(`/roster/`, player, function(response){
+        console.log("added player to dreamTeam")
+    })
 })

@@ -18,6 +18,7 @@ router.get(`/dreamTeam/`, function(request, response){
 router.post(`/roster/`, function(request, response){
     let player = request.body
     dreamTeam.push(player)
+    response.end()
 })
 
 router.put(`/team/`, function(request, response){
